@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="600" viewBox="0 0 300 200">
+  <text 
+    x="50%" 
+    y="65%" 
+    dominant-baseline="middle" 
+    text-anchor="middle"
+    fill="rgb(222, 188, 115)"
+    font-family="Amiri"
+    font-weight="700"
+    font-size="200">
+    GN
+  </text>
+</svg>
