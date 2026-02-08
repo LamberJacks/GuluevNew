@@ -13,9 +13,13 @@ html, body {
   background: var(--accent-black);
   line-height: 1.4;
 }
+html {
+  scroll-behavior: smooth;
+}
 
-html, body {
-  /* Firefox */
+
+/* html, body {
+
   scrollbar-width: none;
   
   -ms-overflow-style: none;
@@ -25,7 +29,7 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
-
+ */
 
 .wrapper {
   min-height: 100%;
@@ -56,7 +60,7 @@ body::-webkit-scrollbar {
 }
 /* --------  scroll ----------*/
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 2px; 
     height: 2px; 
 }
@@ -72,7 +76,7 @@ background: var(--accent-gold);
 
 ::-webkit-scrollbar-thumb:hover {
     background: #a96264;
-}
+} */
 
 
 

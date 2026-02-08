@@ -7,21 +7,37 @@
 
   // бургер меню
 
-    document.addEventListener("click", burgerInit)
-    function burgerInit(e) {
-      const body = document.body
-      const target = e.target
-      const navMobile = document.querySelector(".nav--mobile")
-      const burgerIcon = target.closest(".burger__menu")
-      const navLink = target.closest(".nav__item--mobile")
-      const navButton = target.closest(".header__button--mobile")
-      const width = document.documentElement.clientWidth
-      if (width <= 1200 && (burgerIcon || navLink || navButton)) {
-        body.classList.toggle("body--opened-menu")
-        navMobile.classList.toggle("nav--mobile--active")
-        burgerIcon.classList.toggle("burger__menu--active")
-      }
-    }
+document.addEventListener("click", burgerInit)
+
+function burgerInit(e) {
+  const body = document.body
+  const target = e.target
+  const navMobile = document.querySelector(".nav--mobile")
+  const burgerIcon = target.closest(".burger__menu")
+  const navLink = target.closest(".nav__item--mobile")
+  const navButton = target.closest(".header__button--mobile")
+  const width = document.documentElement.clientWidth
+
+  if (width > 800) return
+
+  // Клик по бургеру — toggle
+  if (burgerIcon) {
+    burgerIcon.classList.toggle("burger__menu--active")
+    body.classList.toggle("body--opened-menu")
+    navMobile.classList.toggle("nav--mobile--active")
+    return
+  }
+
+  // Клик по ссылке или кнопке — всегда закрываем меню
+  if (navLink || navButton) {
+    const burger = document.querySelector(".burger__menu")
+
+    burger.classList.remove("burger__menu--active")
+    body.classList.remove("body--opened-menu")
+    navMobile.classList.remove("nav--mobile--active")
+  }
+}
+
 
         // ---------------------team_swiper-----------------------------
 
