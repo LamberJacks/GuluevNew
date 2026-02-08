@@ -490,61 +490,6 @@ background: var(--accent-gold);
 
 }
 
-
-/* ============ practice ============== */
-.practice {
-  background: var(--accent-grey);
-  padding: 100px 0px;
-}
-.practice__title {
-  color: var(--accent-gold);
-  text-align: center;
-  margin-bottom: 70px;
-}
-.practice__grid {
-  display: grid;
-  grid-template-columns: repeat(3 , 1fr);
-  gap: 70px;
-}
-.pracitce__item {
-  color: var(--accent-white);
-  text-align: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1.5fr;
-  justify-items: center;
-  /* box-shadow: 0px 0px 20px var(--accent-gold); */
-  transition: all .3s;
-    
-}
-
-.pracitce__item:hover{
-   box-shadow: 0px 0px 25px #dcc187; 
-}
-.pracitce__top {
-  padding: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: var(--accent-black);
-}
-.practice__bottom {
-  /* background: var(--accent-grey); */
-    background: var(--accent-black);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-.practice__subtitle {
-}
-.practice__descr {
-  padding: 15px;
-  width: 90%;
-  overflow: auto;
-  max-height: 150px;
-
-}
 /* ============================== */
 /* ============================== */
 /* ============================== */
