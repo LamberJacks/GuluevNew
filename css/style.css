@@ -490,6 +490,83 @@ background: var(--accent-gold);
 
 }
 
+/* ====================== questions ========================= */
+
+.questions {
+}
+.main__questions {
+  margin-top: 100px;
+}
+
+.questions__title {
+  color: var(--accent-gold);
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+
+/* ----- accordion -------- */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.accordion__item {
+  border-radius: 16px;
+  background: var(--accent-grey);
+  color: var(--accent-white);
+  overflow: hidden;
+}
+
+
+.accordion__control {
+  width: 100%;
+  padding: 35px;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--accent-white);
+  line-height: 100%;
+  background: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+.accordion__control img {
+  transition: transform 0.3s ease;
+}
+
+
+.accordion__item--active .accordion__control img {
+  transform: rotate(90deg);
+}
+
+
+.accordion__inner {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+
+.accordion__content {
+  padding: 0 35px 40px;
+}
+
+.accordion__text {
+font-size: 20px;
+line-height: 1;
+}
+
+
+
 /* ============================== */
 /* ============================== */
 /* ============================== */
@@ -616,7 +693,7 @@ background: var(--accent-gold);
   }
 
   .team__title{
-    font-size: 45px;
+    font-size: 50px;
     margin-bottom: 40px;
     text-align: center;
   }
@@ -666,6 +743,18 @@ background: var(--accent-gold);
 
 .team__slide-left {
     max-width: 200px;
+}
+
+/* -------- questions --------- */
+
+.questions__title{
+  font-size: 50px;
+  margin-bottom: 70px;
+}
+
+/* -------- accordion --------- */
+.accordion__control{
+  padding: 30px;
 }
 }
 
@@ -743,6 +832,12 @@ background: var(--accent-gold);
   .team__scrollbar{
     margin-top: 30px;
   }
+
+  /* ----- accordion ------- */
+
+  .accordion__control {
+        padding: 25px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -761,10 +856,10 @@ background: var(--accent-gold);
     padding: 12px 15px;
 }
 
-  .hero__title{
+  .hero__title, .questions__title{
     font-size: 40px;
-    max-width: 600px;
   }
+  
 
   .hero__descr{
     font-size: 18px;
@@ -814,7 +909,7 @@ background: var(--accent-gold);
 }
 
 .team__descr{
-  font-size: 12px;
+  font-size: 15px;
   margin-bottom: 20px;
 }
 
@@ -842,6 +937,28 @@ background: var(--accent-gold);
       width: 80vw;
         height: 80vw;
     }
+
+/* -----------  accordion -------------- */
+.questions__title{
+  margin-bottom: 50px;
+}
+    .accordion__control {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .accordion__content {
+    padding: 0px 25px 30px;
+}
+
+    .accordion__text {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.accordion__control img {
+  max-width: 60px;
+}
   
 }
 
@@ -887,7 +1004,7 @@ background: var(--accent-gold);
 
 
   /* --- team ---- */
-   .team__title{
+   .team__title, .questions__title{
   font-size: 35px;
  }
 
@@ -898,5 +1015,29 @@ background: var(--accent-gold);
   width: 130px;
   height: 130px;
 }
+/* -----------  accordion -------------- */
+
+.accordion {
+    gap: 18px;
+}
+    .accordion__control {
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .accordion__content {
+    padding: 0px 18px 25px;
+}
+
+    .accordion__text {
+    font-size: 15px;
+}
+
+.accordion__control img {
+  max-width: 40px;
+}
+
+.accordion__item {
+    border-radius: 12px;}
 
 }

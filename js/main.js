@@ -101,25 +101,33 @@ showTeamMember(0);
 
 
  //  Акардион 
+const accordions = document.querySelectorAll('.accordion');
 
-  const accordionLists = document.querySelectorAll(".accordion-list")
-  accordionLists.forEach(el => {
-    el.addEventListener("click", e => {
-      const accordionList = e.currentTarget
-      const accordionOpen = accordionList.querySelector(".accordion-list__item--opened")
-      const accordionControl = e.target.closest(".accordion-list__control")
-
-      if (!accordionControl) return
-      e.preventDefault()
-      const accordionItem = accordionControl.parentElement;
-      if (accordionOpen && accordionItem != accordionOpen) {
-        accordionOpen.classList.remove("accordion-list__item--opened")
+accordions.forEach(accordion => {
+  const items = accordion.querySelectorAll('.accordion__item');
+  
+  items.forEach(item => {
+    const control = item.querySelector('.accordion__control');
+    const inner = item.querySelector('.accordion__inner');
+    
+    control.addEventListener('click', () => {
+      const isOpen = item.classList.contains('accordion__item--active');
+      
+      // Закрываем все элементы ТОЛЬКО в текущем аккордеоне
+      items.forEach(el => {
+        el.classList.remove('accordion__item--active');
+        el.querySelector('.accordion__inner').style.maxHeight = null;
+      });
+      
+      // Если был закрыт — открываем
+      if (!isOpen) {
+        item.classList.add('accordion__item--active');
+        inner.style.maxHeight = inner.scrollHeight + 'px';
       }
+    });
+  });
+  
+});
 
-      accordionItem.classList.toggle("accordion-list__item--opened")
-
-
-    })
-  })
     
 })()
