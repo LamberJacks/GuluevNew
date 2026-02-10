@@ -3,7 +3,6 @@
   --accent-white: #fffefe;
   --accent-black: #1a1a1a;
   --accent-grey: #303030;
-  /* --accent-grey: #3c3c3c; */
 }
 
 html, body {
@@ -58,6 +57,9 @@ body::-webkit-scrollbar {
     font-weight: 600;
     line-height: 1.1;
 }
+textarea {
+    resize:none
+}
 /* --------  scroll ----------*/
 
 /* ::-webkit-scrollbar {
@@ -96,7 +98,7 @@ background: var(--accent-gold);
 }
 .header__logo {
   font-family: serif;
-  font-size: 45px;
+  font-size: 40px;
   color: var(--accent-gold);
 }
 .header__nav {
@@ -503,6 +505,111 @@ background: var(--accent-gold);
   margin-bottom: 90px;
   text-align: center;
 }
+.questions__title {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Главный знак вопроса */
+.questions__title::before {
+  content: "?";
+  position: absolute;
+  top:-30px;
+  left: -60px;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  opacity: 0.9;
+  transform: rotate(-12deg);
+  animation: floatQ1 4s ease-in-out infinite;
+  text-shadow: 0 0 12px rgba(222, 188, 115, 0.6);
+}
+
+/* Второй знак вопроса */
+.questions__title::after {
+  content: "?";
+  position: absolute;
+  top: -30px;
+  right: -40px;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  opacity: 0.7;
+  transform: rotate(8deg);
+  animation: floatQ2 5.5s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(222, 188, 115, 0.5);
+}
+
+/* Анимация "парения" */
+@keyframes floatQ1 {
+  0%   { transform: translateY(0) rotate(-12deg); }
+  50%  { transform: translateY(-10px) rotate(-6deg); }
+  100% { transform: translateY(0) rotate(-12deg); }
+}
+
+@keyframes floatQ2 {
+  0%   { transform: translateY(0) rotate(8deg); }
+  50%  { transform: translateY(-14px) rotate(14deg); }
+  100% { transform: translateY(0) rotate(8deg); }
+}
+
+.bid__btn {
+  margin-top: 12px;
+  align-self: flex-start;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  background: linear-gradient(135deg, transparent, rgba(222, 188, 115, 0.15));
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Эффект блика */
+.bid__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25),
+    transparent 80%
+  );
+  transform: translateX(-120%);
+  transition: 0.5s ease;
+}
+
+.bid__btn:hover::before {
+  transform: translateX(120%);
+}
+
+.bid__btn:hover {
+  background: var(--accent-gold);
+  color: var(--accent-black);
+  box-shadow: 0 10px 30px rgba(222, 188, 115, 0.45);
+  transform: translateY(-2px);
+}
+
+.bid__btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(222, 188, 115, 0.3);
+}
+
+.bid__btn {
+  align-self: stretch;
+  text-align: center;
+}
+
+
 
 
 /* ----- accordion -------- */
@@ -524,9 +631,9 @@ background: var(--accent-gold);
 
 .accordion__control {
   width: 100%;
-  padding: 35px;
+  padding: 30px;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 35px;
   color: var(--accent-white);
   line-height: 100%;
   background: transparent;
@@ -564,6 +671,235 @@ background: var(--accent-gold);
 font-size: 20px;
 line-height: 1;
 }
+
+
+/* ==================== bid ======================== */
+
+.bid {
+  position: relative;
+  margin-top: 200px;
+  padding: 90px 0px 200px 0px;
+}
+
+.bid__bg{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.bid__bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bid__bg::before{
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000c3;
+}
+
+.title--container{
+  display: flex;
+  justify-content: center;
+}
+
+.bid__title{
+  position: relative;
+  width: fit-content;
+  color: var(--accent-white);
+  margin-bottom: 70px;
+}
+.bid__title::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-gold);
+}
+
+/* ====== Общая композиция ====== */
+.bid {
+  position: relative;
+  margin-top: 200px;
+  padding: 90px 0 200px;
+  color: var(--accent-white);
+}
+
+.bid__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  margin-top: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ====== Заголовок ====== */
+.bid__title {
+  position: relative;
+  width: fit-content;
+  color: var(--accent-white);
+  margin-bottom: 70px;
+  letter-spacing: 0.04em;
+}
+
+.bid__title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+/* ====== Карточки ====== */
+.bid__contact,
+.bid__form {
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(222, 188, 115, 0.2);
+  border-radius: 18px;
+  padding: 40px 40px 46px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== Контакты ====== */
+.contact__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--accent-gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bid__contact label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.bid__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: var(--accent-white);
+  text-decoration: none;
+  transition: 0.3s ease;
+  position: relative;
+  padding-left: 18px;
+}
+
+.bid__contact a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(222, 188, 115, 0.8);
+}
+
+.bid__contact a:hover {
+  color: var(--accent-gold);
+  transform: translateX(4px);
+}
+
+/* ====== Форма ====== */
+.form__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--accent-gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bid__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bid__form input,
+.bid__form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 254, 254, 0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--accent-white);
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.bid__form textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+.bid__form input::placeholder,
+.bid__form textarea::placeholder {
+  color: rgba(255, 254, 254, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.bid__form input:focus,
+.bid__form textarea:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 1px rgba(222, 188, 115, 0.4);
+}
+
+/* ====== Кнопка (если добавишь) ====== */
+.bid__form button {
+  margin-top: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  background: linear-gradient(135deg, transparent, rgba(222, 188, 115, 0.15));
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bid__form button:hover {
+  background: var(--accent-gold);
+  color: var(--accent-black);
+  box-shadow: 0 10px 30px rgba(222, 188, 115, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ====== Небольшие штрихи ====== */
+.bid__contact,
+.bid__form {
+  position: relative;
+  overflow: hidden;
+}
+
+.bid__contact::after,
+.bid__form::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(222,188,115,0.08), transparent 60%);
+  pointer-events: none;
+}
+
 
 
 
@@ -671,7 +1007,7 @@ line-height: 1;
   .hero__inner{
     gap: 30px;
   }
-  .hero__title{
+  .hero__title, .bid__title{
     font-size: 45px;
   }
   .hero__descr{
@@ -754,7 +1090,8 @@ line-height: 1;
 
 /* -------- accordion --------- */
 .accordion__control{
-  padding: 30px;
+  padding: 27px;
+  font-size: 30px;
 }
 }
 
@@ -838,6 +1175,12 @@ line-height: 1;
   .accordion__control {
         padding: 25px;
     }
+  
+  /* ------- bid ---------- */
+  .bid__inner{
+    gap: 30px;
+    margin-top: 50px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -856,7 +1199,7 @@ line-height: 1;
     padding: 12px 15px;
 }
 
-  .hero__title, .questions__title{
+  .hero__title, .questions__title, .bid__title{
     font-size: 40px;
   }
   
@@ -895,7 +1238,7 @@ line-height: 1;
 }
 
  /* left */
- .team__title{
+ .team__title, .bid__title{
   font-size: 40px;
  }
 
@@ -942,6 +1285,16 @@ line-height: 1;
 .questions__title{
   margin-bottom: 50px;
 }
+
+.questions__title::after{
+    top: -30px;
+    right: -30px;
+}
+
+.questions__title::before{
+    top: -30px;
+    left: -40px;
+}
     .accordion__control {
         padding: 20px;
         font-size: 22px;
@@ -958,6 +1311,27 @@ line-height: 1;
 
 .accordion__control img {
   max-width: 60px;
+}
+
+/* -------- bid ----------- */
+.bid__inner{
+  grid-template-columns: 1fr;
+  margin-top: 40px;
+}
+
+.bid__contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__title{
+  text-align: center;
+}
+
+.bid{
+  margin-top: 100px;
+  
 }
   
 }
@@ -1004,7 +1378,7 @@ line-height: 1;
 
 
   /* --- team ---- */
-   .team__title, .questions__title{
+   .team__title, .questions__title, .bid__title{
   font-size: 35px;
  }
 
@@ -1016,6 +1390,20 @@ line-height: 1;
   height: 130px;
 }
 /* -----------  accordion -------------- */
+.main__questions {
+    margin-top: 70px;
+}
+
+.questions__title::after{
+      top: 50px;
+    right: 0px;
+}
+
+.questions__title::before{
+      top: 50px;
+    left: 0px;
+    font-size: 30px;
+}
 
 .accordion {
     gap: 18px;
@@ -1040,4 +1428,14 @@ line-height: 1;
 .accordion__item {
     border-radius: 12px;}
 
+/* ----- bid -------- */
+    .bid__inner{
+  margin-top: 30px;
+}
+
+.bid{
+  padding: 90px 0 120px;
+  margin-top: 70px;
+
+}
 }
