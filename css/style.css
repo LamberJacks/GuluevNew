@@ -1,7 +1,7 @@
 :root{
   --accent-gold: #debc73;
   --accent-white: #fffefe;
-  --accent-black: #1a1a1a;
+  --accent-black: #151515;
   --accent-grey: #303030;
 }
 
@@ -40,6 +40,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
+  position: relative;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
@@ -83,6 +84,28 @@ background: var(--accent-gold);
 
 
 /* ========================================== */
+
+
+.header__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000000c8;
+}
 
 .header{
   background: var(--accent-black);
@@ -143,7 +166,7 @@ background: var(--accent-gold);
 
 .hero {
   color: var(--accent-white);
-  padding-bottom: 50px;
+  padding-bottom: 120px;
   /* border-bottom: 50%; */
 }
 .hero__inner {
@@ -497,7 +520,7 @@ background: var(--accent-gold);
 .questions {
 }
 .main__questions {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
 .questions__title {
@@ -743,7 +766,7 @@ line-height: 1;
   z-index: 1;
 }
 
-/* ====== Заголовок ====== */
+
 .bid__title {
   position: relative;
   width: fit-content;
@@ -762,7 +785,7 @@ line-height: 1;
   background: linear-gradient(90deg, var(--accent-gold), transparent);
 }
 
-/* ====== Карточки ====== */
+
 .bid__contact,
 .bid__form {
   background: rgba(26, 26, 26, 0.75);
@@ -771,13 +794,17 @@ line-height: 1;
   border-radius: 18px;
   padding: 40px 40px 46px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-/* ====== Контакты ====== */
+
 .contact__title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   color: var(--accent-gold);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -792,7 +819,7 @@ line-height: 1;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--accent-white);
   text-decoration: none;
   transition: 0.3s ease;
@@ -816,9 +843,9 @@ line-height: 1;
   transform: translateX(4px);
 }
 
-/* ====== Форма ====== */
+
 .form__title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 30px;
   color: var(--accent-gold);
@@ -862,7 +889,7 @@ line-height: 1;
   box-shadow: 0 0 0 1px rgba(222, 188, 115, 0.4);
 }
 
-/* ====== Кнопка (если добавишь) ====== */
+
 .bid__form button {
   margin-top: 10px;
   padding: 14px 24px;
@@ -884,7 +911,7 @@ line-height: 1;
   transform: translateY(-2px);
 }
 
-/* ====== Небольшие штрихи ====== */
+
 .bid__contact,
 .bid__form {
   position: relative;
@@ -899,6 +926,122 @@ line-height: 1;
   background: radial-gradient(circle, rgba(222,188,115,0.08), transparent 60%);
   pointer-events: none;
 }
+
+
+/* ================ subscription ==================*/
+
+.subscription {
+  position: relative;
+  margin-top: 100px;
+  /* padding: 120px 0 180px; */
+  color: var(--accent-white);
+}
+
+
+
+.subscription__title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 70px;
+  color: var(--accent-white);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.subscription__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+/* ====== Сетка ====== */
+.subscription__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ====== Карточка ====== */
+.subscription__item {
+  position: relative;
+  padding: 36px 34px 40px;
+  border-radius: 18px;
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(222, 188, 115, 0.18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: 0.35s ease;
+  overflow: hidden;
+}
+
+
+.subscription__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, var(--accent-gold), transparent);
+  opacity: 0.9;
+}
+
+
+.subscription__item::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(222, 188, 115, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+
+.subscription__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(222, 188, 115, 0.35);
+}
+
+
+.subscription__item-title {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--accent-gold);
+  letter-spacing: 0.03em;
+}
+
+/* ====== Описание ====== */
+.subscription__item-descr {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 254, 254, 0.8);
+}
+
+/* ====== Дополнительный штрих ====== */
+.subscription__item:hover .subscription__item-title {
+  text-shadow: 0 0 10px rgba(222, 188, 115, 0.5);
+}
+
+
+.team::marker,
+.questions::marker {
+  content: "";
+}
+
+.team::before,
+.questions::before {
+  border-top: 1px solid rgba(222, 188, 115, 0.15);
+}
+
 
 
 
@@ -986,6 +1129,9 @@ line-height: 1;
   .team__slide-right {
     width: 100%;
   }
+.subscription__item-descr{
+  font-size: 16px;
+}
 }
 
 @media (max-width: 1200px){
@@ -1007,7 +1153,7 @@ line-height: 1;
   .hero__inner{
     gap: 30px;
   }
-  .hero__title, .bid__title{
+  .hero__title, .bid__title, .subscription__title{
     font-size: 45px;
   }
   .hero__descr{
@@ -1093,6 +1239,13 @@ line-height: 1;
   padding: 27px;
   font-size: 30px;
 }
+
+/* ------- subscription --------- */
+
+.subscription__grid{
+  grid-template-columns: repeat(2, 1fr);
+}
+
 }
 
 
@@ -1101,6 +1254,9 @@ line-height: 1;
   .header__logo{
     font-size: 32px;
   }
+  .hero {
+  padding-bottom: 100px;
+}
 
   .nav{
     gap: 18px;
@@ -1181,6 +1337,15 @@ line-height: 1;
     gap: 30px;
     margin-top: 50px;
   }
+
+  .contact__title {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.bid__contact a{
+  font-size: 18px;
+}
+
 }
 
 @media (max-width: 800px) {
@@ -1199,7 +1364,7 @@ line-height: 1;
     padding: 12px 15px;
 }
 
-  .hero__title, .questions__title, .bid__title{
+  .hero__title, .questions__title, .bid__title, .subscription__title{
     font-size: 40px;
   }
   
@@ -1334,10 +1499,17 @@ line-height: 1;
   
 }
   
+/* -------- subscription ------------- */
+.subscription__grid{
+  grid-template-columns: 1fr;
+}
 }
 
 
 @media (max-width: 600px){
+.hero {
+  padding-bottom: 70px;
+}
 
   .header__logo {
     font-size: 27px;
@@ -1378,7 +1550,7 @@ line-height: 1;
 
 
   /* --- team ---- */
-   .team__title, .questions__title, .bid__title{
+   .team__title, .questions__title, .bid__title, .subscription__title{
   font-size: 35px;
  }
 
@@ -1437,5 +1609,17 @@ line-height: 1;
   padding: 90px 0 120px;
   margin-top: 70px;
 
+}
+
+
+/* ------------ subscription ---------------- */
+.subscription__item-title{
+  font-size: 18px;
+}
+.subscription__item-descr{
+  font-size: 15px;
+}
+.subscription__grid{
+  gap: 35px;
 }
 }
