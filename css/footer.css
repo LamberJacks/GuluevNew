@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 150px;
+  /* margin-top: 150px; */
   position: relative;
   background: var(--accent-black);
   color: var(--accent-white);
@@ -129,7 +129,7 @@
 @media (max-width: 600px) {
   .footer {
     padding: 50px 0 24px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
   }
 
   .footer__link,
@@ -142,3 +142,7 @@
     font-size: 12px;
   }
 }
+
+
+
+

@@ -129,5 +129,27 @@ accordions.forEach(accordion => {
   
 });
 
+
+// swiper practice
+// Левый слайдер (миниатюры)
+
+const practiceSwiper = new Swiper('.practice__swiper', {
+  effect: 'cards',
+  cardsEffect: {
+    perSlideOffset: 5, 
+    rotate: true, 
+    slideShadows: false
+  },
+  freeMode: true,
+    navigation: {
+    nextEl: '.practice__next',
+    prevEl: '.practice__prev',
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
     
 })()

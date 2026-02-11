@@ -61,14 +61,14 @@
 <body>
   <div class="wrapper">
     <header class="header">
-    <div class="header__bg"><img src="./img/subscription-bg.jpg" alt=""></div>
+    <div class="header__bg"><img src="./img/hero-bg.jpg" alt=""></div>
     <div class="container">
         <div class="header__top">
           <span class="header__logo">GULUEV.COM</span>
           <nav class="header__nav nav">
-            <a href="#" class="nav__link">Услуги</a>
+            <a href="#subscription" class="nav__link">Услуги</a>
             <a href="#team" class="nav__link">Команда</a>
-            <a href="#" class="nav__link">Кейсы</a>
+            <a href="#practice" class="nav__link">Кейсы</a>
             <a href="#questions" class="nav__link">F.A.Q</a>
           </nav>
           <ul class="header__social social">
@@ -87,9 +87,9 @@
 
         <nav class="nav--mobile">
           <ul class="nav__list--mobile">
-            <li class="nav__item--mobile"><a href="#">Услуги</a></li>            
+            <li class="nav__item--mobile"><a href="#subscription">Услуги</a></li>            
             <li class="nav__item--mobile"><a href="#team">Команда</a></li>
-            <li class="nav__item--mobile"><a href="#">Кейсы</a></li>
+            <li class="nav__item--mobile"><a href="#practice">Кейсы</a></li>
             <li class="nav__item--mobile"><a href="#questions">F.A.Q</a></li>
           </ul>
           <ul class="social--mobile">
@@ -270,8 +270,8 @@
           </div>
         </div>
       </section>
-      <section class="subscription">
-
+      <section id="subscription" class="subscription">
+        <div class="header__bg"><img src="./img/subscription-bg.jpg" alt=""></div>
         <div class="container">
           <h2 class="subscription__title title">Что входит в подписку</h2>
           <ul class="subscription__grid">
@@ -302,31 +302,152 @@
           </ul>
         </div>
       </section>
-      <section id="bid" class="bid">
-        <div class="bid__bg"><img src="./img/card1.jpg" alt=""></div>
-        <div class="container">
-          <div class="title--container"><h2 class="bid__title title">Связаться с нами</h2></div>
-          <div class="bid__inner">
-            <div class="bid__contact contact">
-                  <h5 class="contact__title">Контакты</h5>
-                  <label>
-                    <a class="contact__tel1" href="tel:89954993971">+7 (995) 499-39-71</a>
-                  </label>
-                  <label>
-                    <a class="contact__tel2" href="tel:89053216737">+7 (905) 321-67-37</a>
-                  </label>
-                  <label>
-                    <a class="contact__mail" href="mailto:mail@e-arbitr.ru">mail@e-arbitr.ru</a>
-                  </label>
-            </div>
-          <form action="" class="bid__form">
-            <h5 class="form__title">Обратится</h5>
-            <input id="name" type="text" placeholder="ИМЯ">
-            <input id="tel" type="tel" placeholder="+7 (___) ___-__-__">
-            <textarea name="message" id="message" placeholder="Сообщение" rows="3" re></textarea>
-            <button type="submit" class="bid__btn">Отправить заявку</button>
-          </form>
+      <section class="cases">
+  <div class="container">
+    <h2 class="cases__title title">Мы вам нужны, если</h2>
 
+    <ul class="cases__list">
+      <li class="cases__row">
+        <span class="cases__num">01</span>
+        <div class="cases__content">
+          <h6 class="cases__item-title">Вас включили в РНП</h6>
+          <p class="cases__item-text">
+            Юрист проведет аналитику решения комиссии УФАС о включении в РНП, исследует направленные Вами пояснения
+            и предложит стратегию по обжалованию решения комиссии УФАС в Арбитражном суде. Услуга предоставляется под ключ.
+            Результатом работы является исключение Вашей организации из РНП и восстановление права участвовать в тендерах.
+          </p>
+        </div>
+      </li>
+
+      <li class="cases__row">
+        <span class="cases__num">02</span>
+        <div class="cases__content">
+          <h6 class="cases__item-title">Государственный заказчик превысил полномочия</h6>
+          <p class="cases__item-text">
+            Юрист проанализирует действия гос. заказчика на предмет наличия состава административного правонарушения
+            и направит жалобы в контролирующие органы. Результатом работы является восстановление Ваших прав
+            и сохранение деловой репутации.
+          </p>
+        </div>
+      </li>
+
+      <li class="cases__row">
+        <span class="cases__num">03</span>
+        <div class="cases__content">
+          <h6 class="cases__item-title">С вами не рассчитались за исполнение обязательств</h6>
+          <p class="cases__item-text">
+            С Вами расторгли контракт и не оплатили оказанную услугу или работу? Юрист инициирует судебное разбирательство
+            и направит жалобы в контролирующие органы с целью восстановления Ваших прав.
+          </p>
+        </div>
+      </li>
+
+      <li class="cases__row">
+        <span class="cases__num">04</span>
+        <div class="cases__content">
+          <h6 class="cases__item-title">Вы не имеете возможности подписать контракт</h6>
+          <p class="cases__item-text">
+            Ошибка в расчёте цены, не подписан контракт, брокер не выпустил независимую гарантию или нет средств
+            для обеспечения исполнения? Юрист сопроводит Вас на заседании УФАС и предпримет меры, чтобы Вашу организацию
+            не включили в РНП.
+          </p>
+        </div>
+      </li>
+
+      <li class="cases__row">
+        <span class="cases__num">05</span>
+        <div class="cases__content">
+          <h6 class="cases__item-title">Заблокировали счёт по 115-ФЗ</h6>
+          <p class="cases__item-text">
+            Банк незаконно заблокировал счёт по 115-ФЗ? Юрист проанализирует документы и предложит стратегию
+            по оспариванию действий банка. Результатом услуги является признание решения о приостановлении счёта незаконным.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+      </section>
+      <section id="practice" class="practice">
+                <div class="header__bg"><img src="./img/practice-bg.jpg" alt=""></div>
+        <div class="container">
+          <h2 class="practice__title title">Результаты нашей работы</h2>
+
+          <div class="swiper practice__swiper">
+            <div class="practice__prev"><-</div>
+            <div class="practice__next">-></div>
+
+            <div class="swiper-wrapper">
+
+              <!-- Slide -->
+              <div class="swiper-slide practice__slide">
+                <div class="practice__card">
+                  <div class="practice__content">
+                    <h6 class="practice__card-title">Исключение из РНП</h6>
+                    <p class="practice__card-text">
+                      Представляли интересы подрядчика при обжаловании решения комиссии УФАС о включении в РНП.
+                      Подготовили позицию, доказательства и процессуальные документы для Арбитражного суда.
+                    </p>
+                    <p class="practice__result">
+                      Результат: организация исключена из РНП, право участия в тендерах восстановлено
+                    </p>
+                  </div>
+
+                  <div class="practice__media">
+                    <a data-fslightbox="gallery" href="./img/card1.jpg">
+        <img src="./img/card1.jpg" alt="Судебное решение">
+      </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide -->
+              <div class="swiper-slide practice__slide">
+                <div class="practice__card">
+                  <div class="practice__content">
+                    <h6 class="practice__card-title">Разблокировка счета по 115-ФЗ</h6>
+                    <p class="practice__card-text">
+                      Подготовили правовую позицию и комплект документов для банка и надзорных органов.
+                      Сопроводили клиента на всех этапах взаимодействия с кредитной организацией.
+                    </p>
+                    <p class="practice__result">
+                      Результат: счет разблокирован, ограничения признаны незаконными
+                    </p>
+                  </div>
+
+                  <div class="practice__media">
+                    <a data-fslightbox="gallery" href="./img/card1.jpg">
+
+        <img src="./img/card1.jpg" alt="Письмо банка">
+      </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide -->
+              <div class="swiper-slide practice__slide">
+                <div class="practice__card">
+                  <div class="practice__content">
+                    <h6 class="practice__card-title">Взыскание задолженности</h6>
+                    <p class="practice__card-text">
+                      Инициировали судебное разбирательство по факту неоплаты выполненных работ
+                      по государственному контракту. Сформировали доказательственную базу.
+                    </p>
+                    <p class="practice__result">
+                      Результат: задолженность взыскана в полном объёме
+                    </p>
+                  </div>
+
+                  <div class="practice__media">
+                    <a data-fslightbox="gallery" href="./img/card1.jpg">
+        <img src="./img/card1.jpg" alt="Решение суда">
+      </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="swiper-pagination practice__pagination"></div>
           </div>
         </div>
       </section>
@@ -413,6 +534,37 @@
 
         </div>
       </section>
+      <section id="bid" class="bid">
+        <div class="bid__bg"><img src="./img/card1.jpg" alt=""></div>
+        <div class="container">
+          <div class="title--container"><h2 class="bid__title title">Связаться с нами</h2></div>
+          <div class="bid__inner">
+            <div class="bid__contact contact">
+                  <h5 class="contact__title">Контакты</h5>
+                  <label>
+                    <a class="contact__tel1" href="tel:89954993971">+7 (995) 499-39-71</a>
+                  </label>
+                  <label>
+                    <a class="contact__tel2" href="tel:89053216737">+7 (905) 321-67-37</a>
+                  </label>
+                  <label>
+                    <a class="contact__mail" href="mailto:mail@e-arbitr.ru">mail@e-arbitr.ru</a>
+                  </label>
+            </div>
+          <form action="" class="bid__form">
+            <h5 class="form__title">Обратится</h5>
+            <input id="name" type="text" placeholder="ИМЯ">
+            <input id="tel" type="tel" placeholder="+7 (___) ___-__-__">
+            <textarea name="message" id="message" placeholder="Сообщение" rows="3" re></textarea>
+            <button type="submit" class="bid__btn">Отправить заявку</button>
+          </form>
+
+          </div>
+        </div>
+      </section>
+
+
+
     </main>
     <footer class="footer">
   <div class="container footer__inner">
@@ -437,10 +589,10 @@
     <div class="footer__col">
       <h6 class="footer__title">Карта сайта</h6>
       <ul class="footer__nav">
-        <li><a href="#" class="footer__link">Услуги, входящие в подписку</a></li>
-        <li><a href="#" class="footer__link">Наши специалисты</a></li>
-        <li><a href="#" class="footer__link">Результаты работы</a></li>
-        <li><a href="#" class="footer__link">F.A.Q.</a></li>
+        <li><a href="#subscription" class="footer__link">Услуги, входящие в подписку</a></li>
+        <li><a href="#team" class="footer__link">Наши специалисты</a></li>
+        <li><a href="#practice" class="footer__link">Результаты работы</a></li>
+        <li><a href="#questions" class="footer__link">F.A.Q.</a></li>
       </ul>
     </div>
 
@@ -450,7 +602,8 @@
     <span>© 2026 GULUEV.COM</span>
   </div>
        <script src="./js/swiper-bundle.min.js"></script>
-      <script src="./js/inputmask.min.js"></script>
+       <script src="./js/inputmask.min.js"></script>
+       <script src="./js/fslightbox.js"></script>
       <script src="./js/main.js"></script>
 </footer>
 

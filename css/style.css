@@ -128,7 +128,7 @@ background: var(--accent-gold);
 }
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 32px;
   justify-content: space-between;
 }
 .nav__link {
@@ -698,12 +698,6 @@ line-height: 1;
 
 /* ==================== bid ======================== */
 
-.bid {
-  position: relative;
-  margin-top: 200px;
-  padding: 90px 0px 200px 0px;
-}
-
 .bid__bg{
   position: absolute;
   inset: 0;
@@ -752,7 +746,7 @@ line-height: 1;
 /* ====== Общая композиция ====== */
 .bid {
   position: relative;
-  margin-top: 200px;
+  margin-top: 120px;
   padding: 90px 0 200px;
   color: var(--accent-white);
 }
@@ -933,19 +927,20 @@ line-height: 1;
 .subscription {
   position: relative;
   margin-top: 100px;
-  /* padding: 120px 0 180px; */
+  padding: 120px 0 180px;
   color: var(--accent-white);
 }
 
 
 
 .subscription__title {
+  display: block;
   position: relative;
-  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
   margin-bottom: 70px;
   color: var(--accent-white);
   letter-spacing: 0.04em;
-  text-align: center;
 }
 
 .subscription__title::after {
@@ -1044,6 +1039,296 @@ line-height: 1;
 
 
 
+/* =========== фв=================== */
+
+
+/* ====== Секция ====== */
+.cases {
+  position: relative;
+  padding: 140px 0 180px;
+  background: var(--accent-black);
+  color: var(--accent-white);
+  overflow: hidden;
+}
+
+/* .cases::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(222, 188, 115, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(222, 188, 115, 0.05), transparent 50%);
+  pointer-events: none;
+} */
+
+.cases__title {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.cases__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+.cases__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.cases__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 30px;
+  padding: 36px 40px 40px 30px;
+  border-radius: 18px;
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(222, 188, 115, 0.18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  transition: 0.35s ease;
+  overflow: hidden;
+}
+
+
+.cases__row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, var(--accent-gold), transparent);
+}
+
+
+.cases__row::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(222, 188, 115, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+
+.cases__row:hover {
+  transform: translateY(-4px);
+  border-color: rgba(222, 188, 115, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+.cases__num {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 14px rgba(222, 188, 115, 0.5);
+  align-self: flex-start;
+}
+
+
+/* ====== Контент ====== */
+.cases__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cases__item-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--accent-white);
+}
+
+.cases__item-text {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255, 254, 254, 0.8);
+}
+
+/* ========== */
+
+/* ====== Секция ====== */
+.practice {
+  position: relative;
+  padding: 140px 0 180px;
+  background: var(--accent-black);
+  color: var(--accent-white);
+  overflow: hidden;
+}
+
+
+.practice__title {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  display: block;
+  text-align: center;
+}
+
+.practice__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+/* ====== Слайдер ====== */
+.practice__swiper {
+  position: relative;
+  padding: 30px 0 60px;
+}
+
+.practice__slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* ====== Карточка ====== */
+.practice__card {
+  width: 100%;
+  max-width: 980px;
+  min-height: 360px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  padding: 40px 44px;
+  border-radius: 22px;
+  background: rgba(26, 26, 26, 0.988);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(222, 188, 115, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Свечение */
+.practice__card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(222, 188, 115, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* ====== Контент слева ====== */
+.practice__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.practice__card-title {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.practice__card-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 254, 254, 0.8);
+}
+
+/* Акцентный результат */
+.practice__result {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--accent-gold);
+  border-top: 1px solid rgba(222, 188, 115, 0.25);
+  text-shadow: 0 0 10px rgba(222, 188, 115, 0.4);
+}
+
+.practice__media {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(222, 188, 115, 0.2);
+  background: #000;
+}
+
+.practice__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(1.05);
+  transition: 0.4s ease;
+}
+
+.practice__card:hover .practice__media img {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.practice__prev,
+.practice__next {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(222, 188, 115, 0.4);
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+
+}
+
+
+.practice__prev { left: 50px; }
+.practice__next { right: 50px; }
+
+.practice__prev:hover,
+.practice__next:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--accent-black);
+}
+
+/* ====== Пагинация ====== */
+.practice__pagination .swiper-pagination-bullet {
+  background: rgba(255, 254, 254, 0.4);
+  opacity: 1;
+}
+
+.practice__pagination .swiper-pagination-bullet-active {
+  background: var(--accent-gold);
+}
+
 
 
 /* ============================== */
@@ -1132,6 +1417,15 @@ line-height: 1;
 .subscription__item-descr{
   font-size: 16px;
 }
+
+.practice__next{
+  top: 100%;
+  right: 40%;
+}
+.practice__prev{
+  top: 100%;
+  left: 40%;
+}
 }
 
 @media (max-width: 1200px){
@@ -1153,7 +1447,7 @@ line-height: 1;
   .hero__inner{
     gap: 30px;
   }
-  .hero__title, .bid__title, .subscription__title{
+  .hero__title, .bid__title, .subscription__title, .cases__title, .practice__title{
     font-size: 45px;
   }
   .hero__descr{
@@ -1245,6 +1539,15 @@ line-height: 1;
 .subscription__grid{
   grid-template-columns: repeat(2, 1fr);
 }
+
+/* ------------ cases ------------ */
+  .cases__row {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .cases__num {
+    font-size: 46px;
+  }
 
 }
 
@@ -1350,6 +1653,11 @@ line-height: 1;
   font-size: 18px;
 }
 
+/* ---------- subscription ---------------- */
+.subscription, .practice{
+  padding: 100px 0px 120px 0px;
+}
+
 }
 
 @media (max-width: 800px) {
@@ -1368,7 +1676,7 @@ line-height: 1;
     padding: 12px 15px;
 }
 
-  .hero__title, .questions__title, .bid__title, .subscription__title{
+  .hero__title, .questions__title, .bid__title, .subscription__title, .cases__title, .practice__title{
     font-size: 40px;
   }
   
@@ -1407,7 +1715,7 @@ line-height: 1;
 }
 
  /* left */
- .team__title, .bid__title{
+ .team__title, .bid__title, .cases__title, .practice__title{
   font-size: 40px;
  }
 
@@ -1499,13 +1807,64 @@ line-height: 1;
 }
 
 .bid{
-  margin-top: 100px;
+  margin-top: 70px;
   
 }
   
 /* -------- subscription ------------- */
 .subscription__grid{
   grid-template-columns: 1fr;
+}
+
+
+/* ------- cases ----------------- */
+  .cases {
+    padding: 100px 0 120px;
+  }
+
+  .cases__row {
+    grid-template-columns: 70px 1fr;
+    padding: 30px 28px 32px 22px;
+  }
+
+  .cases__num {
+    font-size: 38px;
+  }
+
+    .cases__item-title {
+  font-size: 18px;
+}
+
+.cases__item-text {
+  font-size: 16px;
+}
+
+/* ------ ptractice ---------- */
+  .practice__card {
+    grid-template-columns: 1fr;
+  }
+
+  .practice__media {
+    max-height: 700px;
+  }
+  
+  .practice__next{
+  top: 98%;
+  right: 10%;
+}
+.practice__prev{
+  top: 98%;
+  left: 10%;
+}
+.practice__card-title{
+  font-size: 22px;
+}
+
+.practice__card-text{
+  font-size: 16px;
+}
+.practice__result{
+  font-size: 18px;
 }
 }
 
@@ -1554,7 +1913,7 @@ line-height: 1;
 
 
   /* --- team ---- */
-   .team__title, .questions__title, .bid__title, .subscription__title{
+   .team__title, .questions__title, .bid__title, .subscription__title, .cases__title, .practice__title{
   font-size: 35px;
  }
 
@@ -1626,4 +1985,42 @@ line-height: 1;
 .subscription__grid{
   gap: 35px;
 }
+
+/* ------------- cases ----------------- */
+  .cases__row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cases__num {
+    font-size: 34px;
+  }
+
+
+  /* ------- practice ----------- */
+  .practice__card-title{
+    font-size: 20px;
+  }
+
+      .practice__card-text {
+        font-size: 15px;
+    }
+
+        .practice__result {
+        font-size: 16px;
+    }
+
+    .practice__content {
+    text-align: center;
+}
+
+.practice__card{
+  padding: 25px 30px;
+}
+
+
+.practice__title{
+  margin-bottom: 50px;
+}
+
 }
