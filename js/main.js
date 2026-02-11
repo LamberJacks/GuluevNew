@@ -140,7 +140,6 @@ const practiceSwiper = new Swiper('.practice__swiper', {
     rotate: true, 
     slideShadows: false
   },
-  freeMode: true,
     navigation: {
     nextEl: '.practice__next',
     prevEl: '.practice__prev',

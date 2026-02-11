@@ -941,6 +941,7 @@ line-height: 1;
   margin-bottom: 70px;
   color: var(--accent-white);
   letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .subscription__title::after {
@@ -1327,6 +1328,13 @@ line-height: 1;
 
 .practice__pagination .swiper-pagination-bullet-active {
   background: var(--accent-gold);
+}
+
+.swiper-pagination{
+  display: flex;
+  justify-content: center;
+  gap: 5px
+  ;
 }
 
 
